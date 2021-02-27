@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot 1`] = `
+Object {
+  "Outputs": Object {
+    "URL": Object {
+      "Value": Object {
+        "Fn::Join": Array [
+          "",
+          Array [
+            "https://",
+            Object {
+              "Ref": "API62EA1CFF",
+            },
+            ".execute-api.",
+            Object {
+              "Ref": "AWS::Region",
+            },
+            ".",
+            Object {
+              "Ref": "AWS::URLSuffix",
+            },
+            "/",
+          ],
+        ],
+      },
+    },
+  },
+  "Resources": Object {
+    "API62EA1CFF": Object {
+      "Properties": Object {
+        "Name": "API",
+        "ProtocolType": "HTTP",
+      },
+      "Type": "AWS::ApiGatewayV2::Api",
+    },
+    "APIDefaultStage119C0912": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "API62EA1CFF",
+        },
+        "AutoDeploy": true,
+        "StageName": "$default",
+      },
+      "Type": "AWS::ApiGatewayV2::Stage",
+    },
+    "APIGEThookAC61B8D6": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "API62EA1CFF",
+        },
+        "AuthorizationScopes": Array [],
+        "RouteKey": "GET /hook",
+        "Target": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "integrations/",
+              Object {
+                "Ref": "APIGEThookHttpIntegration6831431406a6d8d3f953bcf4c539ab1133C1A7F8",
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::ApiGatewayV2::Route",
+    },
+    "APIGEThookHttpIntegration6831431406a6d8d3f953bcf4c539ab1133C1A7F8": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "API62EA1CFF",
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": Object {
+          "Fn::GetAtt": Array [
+            "customAlpineECRD1F704A0",
+            "Arn",
+          ],
+        },
+        "PayloadFormatVersion": "2.0",
+      },
+      "Type": "AWS::ApiGatewayV2::Integration",
+    },
+    "APIGEThooktestAPIGEThook83D27B45PermissionA8EA76D9": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "customAlpineECRD1F704A0",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "arn:",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              Object {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              Object {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              Object {
+                "Ref": "API62EA1CFF",
+              },
+              "/*/*/hook",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "APIOPTIONShookF9B9AB51": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "API62EA1CFF",
+        },
+        "AuthorizationScopes": Array [],
+        "RouteKey": "OPTIONS /hook",
+        "Target": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "integrations/",
+              Object {
+                "Ref": "APIGEThookHttpIntegration6831431406a6d8d3f953bcf4c539ab1133C1A7F8",
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::ApiGatewayV2::Route",
+    },
+    "APIOPTIONShooktestAPIOPTIONShook127317F0Permission00EF2AF4": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "customAlpineECRD1F704A0",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "arn:",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              Object {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              Object {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              Object {
+                "Ref": "API62EA1CFF",
+              },
+              "/*/*/hook",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "APIPOSThook5321142B": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "API62EA1CFF",
+        },
+        "AuthorizationScopes": Array [],
+        "RouteKey": "POST /hook",
+        "Target": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "integrations/",
+              Object {
+                "Ref": "APIGEThookHttpIntegration6831431406a6d8d3f953bcf4c539ab1133C1A7F8",
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::ApiGatewayV2::Route",
+    },
+    "APIPOSThooktestAPIPOSThook66C59993PermissionFDC336FF": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "customAlpineECRD1F704A0",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "arn:",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              Object {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              Object {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              Object {
+                "Ref": "API62EA1CFF",
+              },
+              "/*/*/hook",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "customAlpineECRD1F704A0": Object {
+      "DependsOn": Array [
+        "customAlpineECRServiceRole63B86C7C",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "ImageUri": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Ref": "AWS::AccountId",
+                },
+                ".dkr.ecr.",
+                Object {
+                  "Ref": "AWS::Region",
+                },
+                ".",
+                Object {
+                  "Ref": "AWS::URLSuffix",
+                },
+                "/aws-cdk/assets:e49e876d3ff3ec531b6cea427ff14d9d184b45e8ba630e75bd1ece1702245ece",
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "TELEGRAM_TOKEN": "1651097825:AAF-X-Q1z5ZTXYGkUlqJXsvOGf2MpaGAni4",
+            "URLTOKEN": "undefined",
+          },
+        },
+        "MemorySize": 1024,
+        "PackageType": "Image",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "customAlpineECRServiceRole63B86C7C",
+            "Arn",
+          ],
+        },
+        "Timeout": 300,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "customAlpineECRServiceRole63B86C7C": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;
