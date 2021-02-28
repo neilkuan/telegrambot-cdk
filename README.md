@@ -1,4 +1,5 @@
 # TelegramBot via cdk deploy
+![](./pics/telegrambot.png)
 
 ## Clone project
 ```bash
