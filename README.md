@@ -1,5 +1,20 @@
 # TelegramBot via cdk deploy
 
+## Clone project
+```bash
+git clone https://github.com/guan840912/telegrambot-cdk.git
+
+cd telegrambot-cdkt/
+
+```
+
+## Install package via `projen`
+```bash
+# via npx
+npx projen
+
+```
+
 ## You need two token.
 - [Get Telegarm Bot Token](https://core.telegram.org/bots)
   - like: 1234456789:xcvbnzxcvxcvbxcvbxcvbxcvbxbcvbcv
@@ -68,7 +83,7 @@ curl "https://api.telegram.org/bot${TELEGRAM_TOKEN}/getUpdates"
 ```
 
 
-### Send Message to specify chat
+### Send a message to the specified chat.
 ```bash
 curl \
 "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${chat_id}&text=hello"
