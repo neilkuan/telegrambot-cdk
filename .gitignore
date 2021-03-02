@@ -26,6 +26,7 @@ junit.xml
 lerna-debug.log*
 lib-cov
 logs
+main.test.ts.snap
 node_modules/
 npm-debug.log*
 pids
