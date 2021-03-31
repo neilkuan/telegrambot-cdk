@@ -14,6 +14,6 @@ const project = new AwsCdkTypeScriptApp({
   ],
   dependabot: false,
 });
-const ignore = ['config.ini', 'dependabot.yml', 'venv', 'main.test.ts.snap'];
+const ignore = ['config.ini', 'dependabot.yml', 'venv', 'main.test.ts.snap', '.DS_Store', 'cdk.context.json'];
 project.gitignore.exclude(...ignore);
 project.synth();

@@ -6,6 +6,7 @@
 *.seed
 *.tgz
 *.tsbuildinfo
+.DS_Store
 .cache
 .cdk.staging/
 .eslintcache
@@ -17,6 +18,7 @@
 /lib
 /test-reports/
 build/Release
+cdk.context.json
 cdk.out/
 config.ini
 coverage
@@ -37,7 +39,6 @@ yarn-error.log*
 !/.eslintrc.json
 !/.github/pull_request_template.md
 !/.github/workflows/build.yml
-!/.github/workflows/rebuild-bot.yml
 !/.mergify.yml
 !/.npmignore
 !/.projen/deps.json
