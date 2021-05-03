@@ -34,7 +34,6 @@ COPY app/* ${FUNCTION_DIR}
 # RUN python${RUNTIME_VERSION} -m pip install -r requirements.txt --target ${FUNCTION_DIR} 
 # Install Lambda Runtime Interface Client for Python
 RUN python${RUNTIME_VERSION} -m pip install awslambdaric requests validators --target ${FUNCTION_DIR}
-
 # Stage 3 - final runtime image
 # Grab a fresh copy of the Python image
 FROM python-alpine
