@@ -1,8 +1,6 @@
 import json
 import logging
 import os
-import subprocess
-import time
 import requests
 from  base64 import decode
 import sys
